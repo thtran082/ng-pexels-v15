@@ -4,6 +4,8 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { provideAppConfig } from './shared/config/config.di';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { pexelsInterceptor } from './shared/data-access/pexels/pexels.interceptor';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +23,7 @@ export class AppComponent {
           provideRouter(routes),
           provideAnimations(),
           importProvidersFrom([BrowserAnimationsModule]),
+          provideHttpClient(withInterceptors([pexelsInterceptor])),
           provideAppConfig(config)
         ]
       }

@@ -19,7 +19,6 @@ export function createInjectionToken<T>(description: string): InjectionTokenCrea
   const token = new InjectionToken<T>(description);
 
   function injectFn(opt: InjectOptions = {}) {
-    console.log('im here', token);
     return inject(token, opt);
   }
 

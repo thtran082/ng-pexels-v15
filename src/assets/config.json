@@ -1,4 +1,7 @@
 {
-  "baseUrl": "https://api,github.com/users",
-  "developerOnly": true
+  "baseUrl": "https://api.pexels.com/v1",
+  "pexels": {
+    "apiKey": "563492ad6f91700001000001c44ddc77cd62477da443e8f0b1d3a63e",
+    "pageSize": 10
+  }
 }
