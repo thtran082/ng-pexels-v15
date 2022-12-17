@@ -1,0 +1,4 @@
+{
+  "baseUrl": "https://api,github.com/users",
+  "developerOnly": true
+}

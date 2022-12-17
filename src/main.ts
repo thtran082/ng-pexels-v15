@@ -1,3 +1,6 @@
 import { AppComponent } from './app/app.component';
 
-AppComponent.bootstrap();
+(async () => {
+  const config = await fetch('assets/config.json').then(res => res.json());
+  void AppComponent.bootstrap(config);
+})();

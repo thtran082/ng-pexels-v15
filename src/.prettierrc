@@ -1,5 +1,7 @@
 {
   "semi": true,
   "singleQuote": true,
-  "htmlWhitespaceSensitivity": "ignore"
+  "trailingComma": "all",
+  "htmlWhitespaceSensitivity": "ignore",
+  "tabWidth": 4
 }

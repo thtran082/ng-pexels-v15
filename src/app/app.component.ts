@@ -3,6 +3,7 @@ import { provideRouter, RouterOutlet } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { provideAppConfig } from './shared/config/config.di';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,13 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
   imports: [RouterOutlet],
 })
 export class AppComponent {
-  static bootstrap() {
-    bootstrapApplication(this, {
+  static bootstrap(config: any) {
+    return bootstrapApplication(this, {
         providers: [
           provideRouter(routes),
           provideAnimations(),
           importProvidersFrom([BrowserAnimationsModule]),
+          provideAppConfig(config)
         ]
       }
     ).catch(error => console.error(error));
